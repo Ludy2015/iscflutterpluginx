@@ -244,6 +244,7 @@ class IscApi {
     String cameraIndexCode,
     int action,
     String command, {
+    String speed = '50', //1-100 默认50
     bool isHttps = false,
   }) async {
     if (cameraIndexCode == null || cameraIndexCode.isEmpty) {
@@ -261,6 +262,7 @@ class IscApi {
     body['cameraIndexCode'] = cameraIndexCode;
     body['action'] = action;
     body['command'] = command;
+    body['speed'] = speed;
 
     Dio dio = Dio();
     dio.interceptors.add(LogInterceptor(requestBody: true));
