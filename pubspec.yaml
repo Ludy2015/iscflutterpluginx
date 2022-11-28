@@ -13,7 +13,7 @@ dependencies:
   dio: ^4.0.4
   crypto: ^3.0.1
   path_provider: ^2.0.8
-  permission_handler: ^8.3.0
+  permission_handler: ^10.2.0
 
 flutter:
   plugin:
