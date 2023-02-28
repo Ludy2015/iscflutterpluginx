@@ -2,9 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:crypto/crypto.dart';
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+import 'package:dio/io.dart';
 
 ///海康isc平台,认证配置,如果需要自行和海康的isc平台交互,
 ///比如获取预览地址,云台控制等等,就需要配置该项
@@ -124,12 +123,13 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
         return true;
       };
+      return null;
     };
     dio.options.headers.addAll(headers);
     Response response = await dio.post(url, data: body);
@@ -185,12 +185,13 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
         return true;
       };
+      return null;
     };
     dio.options.headers.addAll(headers);
     Response response = await dio.post(url, data: body);
@@ -268,12 +269,13 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
         return true;
       };
+      return null;
     };
     dio.options.headers.addAll(headers);
     Response response = await dio.post(url, data: body);
@@ -321,12 +323,13 @@ class IscApi {
     dio.interceptors.add(LogInterceptor(requestBody: true));
 
     // 忽略SSL认证
-    (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
         return true;
       };
+      return null;
     };
     dio.options.headers.addAll(headers);
     Response response = await dio.post(url, data: body);
