@@ -32,6 +32,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.king.iscflutterplugin' 
     compileSdkVersion 35
 
     defaultConfig {
