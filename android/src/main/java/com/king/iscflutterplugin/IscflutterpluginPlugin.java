@@ -22,6 +22,7 @@ public class IscflutterpluginPlugin implements FlutterPlugin {
 
     @Override
     public void onDetachedFromEngine(FlutterPluginBinding binding) {
+        // 如果有资源释放可在此处处理
     }
 
     // /**
@@ -33,9 +34,4 @@ public class IscflutterpluginPlugin implements FlutterPlugin {
     //     //播放器注册
     //     registrar.platformViewRegistry().registerViewFactory("plugin:isc_player", new IscPlayerViewFactory(registrar.messenger()));
     // }
-
-    @Override
-    public void onDetachedFromEngine(FlutterPluginBinding binding) {
-        // 如果有资源释放可在此处处理
-    }
 }
